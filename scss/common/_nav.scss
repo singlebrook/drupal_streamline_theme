@@ -1,0 +1,25 @@
+nav {
+
+  &.main li {
+    font-size: 1.2rem;
+  }
+
+  clear: both;
+  h2 { display: none; }
+
+  #secondary-menu {
+    float: right;
+  }
+
+  li {
+    display: inline-block;
+
+    &.first {
+      padding-left: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}

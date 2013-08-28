@@ -1,0 +1,13 @@
+.container {
+  background: $content-area;
+  @include box-shadow(0px 0px 20px 0px rgba(0,0,0,0.3));
+}
+
+#main {
+  clear: both;
+  padding-top: .5em;
+}
+
+#breadcrumb {
+  font-size: .8rem;
+}
