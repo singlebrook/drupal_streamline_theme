@@ -6,7 +6,7 @@
  * Adds custom markup to footer.
  * Adds modernizr.js
  */
-function drupal_bootstrap_theme_preprocess_page(&$variables) {
+function drupal_streamline_theme_preprocess_page(&$variables) {
   // Footer content
   $variables['page']['footer'][] = array('#markup' => '<div class="copyright">&copy; ' . date('Y') . ' CLIENT_NAME </div>');
 
@@ -18,6 +18,6 @@ function drupal_bootstrap_theme_preprocess_page(&$variables) {
  *
  * Disables sticky table headers FTW!
  */
-function drupal_bootstrap_theme_js_alter(&$js) {
+function drupal_streamline_theme_js_alter(&$js) {
   unset($js['misc/tableheader.js']);
 }
