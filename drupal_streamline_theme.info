@@ -2,4 +2,4 @@ name = CLIENT_NAME
 description = "A theme for CLIENT_NAME"
 core = 7.x
 
-stylesheets[all][] = css/style.css
+stylesheets[all][] = styles/style.css
