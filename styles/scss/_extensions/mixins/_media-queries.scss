@@ -1,0 +1,95 @@
+//////////////////////////////////////////////////////////////////
+// Basic Mobile first approach. Not necessarily device orientated,
+// what's your order? Small med or large.
+// Everything smaller than the container size give or take
+//////////////////////////////////////////////////////////////////
+// Everything smaller than the container size give or take
+@mixin lt-container {
+	@media only screen and (max-width : $container-max-width + 20) and (min-width : $mq-med	 + 1) {
+		@content;
+	}
+}
+
+@mixin gt-container {
+	@media only screen and (min-width : $container-max-width + 1) {
+		@content;
+	}
+}
+
+// Everything greater than tablet portraitish viewports
+@mixin gt-med {
+	@media only screen and (min-width : $mq-med + 1) {
+		@content;
+	}
+}
+
+// Everything greater than tablet portraitish viewports
+@mixin lt-med {
+	@media only screen and (max-width : $mq-med - 1) {
+		@content;
+	}
+}
+
+// Everything greater than mobilish viewports
+@mixin gt-small {
+	@media only screen and (min-width : $mq-small) {
+		@content;
+	}
+}
+
+// Everything greater than tablet portraitish viewports
+@mixin lt-small {
+	@media only screen and (max-width : $mq-small - 1) {
+		@content;
+	}
+}
+
+// Between med & small
+@mixin btw-small-med {
+	@media only screen and (max-width : $mq-med - 1) and (min-width : $mq-small + 1) {
+		@content;
+	}
+}
+
+// Between med & large
+@mixin btw-med-vert-big {
+	// Ie big imac style displays (native) resolution
+	@media only screen and (min-width : $mq-med + 1) and (max-height: 850px) {
+		@content;
+	}
+}
+
+// Less than custom
+@mixin lt-custom($lt-custom-width) {
+	@media only screen and (max-width : $lt-custom-width - 1) {
+		@content;
+	}
+}
+
+@mixin gt-custom($gt-custom-width) {
+	@media only screen and (min-width : $gt-custom-width + 1) {
+		@content;
+	}
+}
+
+// Vertical Media Queries
+// Ie macbook air 11" 1366 by 768 (native) resolution
+@mixin vert-small {
+	@media only screen and (min-width : $mq-med + 1) and (max-height: 700px) {
+		@content;
+	}
+}
+
+// Ie big imac style displays (native) resolution
+@mixin vert-big {
+	@media only screen and (min-width : $mq-med + 1) and (min-height: 850px) {
+		@content;
+	}
+}
+
+// Retina screens have a 1.5 pixel ratio, not 2
+@mixin retina {
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+		@content;
+	}
+}

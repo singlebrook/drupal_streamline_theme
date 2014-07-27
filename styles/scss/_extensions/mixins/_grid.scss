@@ -1,0 +1,28 @@
+// Basic columns
+$col_width: ($width - ($col_margin * ($columns))) / $columns;
+$col_total_width: $col_width + $col_margin;
+
+@mixin row() {
+  float: left;
+  clear: both;
+  width: $width;
+  overflow: hidden;
+}
+
+@mixin col($n: 1) {
+  @include span($n);
+  float: left;
+  display: inline;
+}
+
+@mixin span($n: 1) {
+  width: ($n * $col_width) + (($n - 1) * $col_margin);
+  @if $n == $columns {
+    margin-right: 0;
+  }
+
+  @else {
+    margin-left: $col_margin_left;
+    margin-right: $col_margin_right;
+  }
+}

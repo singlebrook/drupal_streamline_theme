@@ -1,0 +1,244 @@
+////////////////////
+// Normalizing styles
+////////////////////
+button, input, select, textarea {
+  margin: 0;
+  vertical-align: middle;
+}
+
+button, input {
+  *overflow: visible;
+  line-height: normal;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  padding: 0; border: 0;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input[type="checkbox"] + label,  input[type="radio"] + label {
+  display: inline;
+  float: none;
+  width: auto;
+}
+
+input[type="radio"] ul li label {
+  display: inline;
+  float: none;
+  width: auto;
+  font-weight: normal;
+}
+
+// Removes the red outline
+input:invalid {
+   -moz-box-shadow: none !important;
+}
+
+
+////////////////////////////
+// Elements
+////////////////////////////
+form {
+	width: 100%;
+	max-width: $form-max-width;
+}
+
+fieldset {
+
+}
+
+label, legend {
+	margin-bottom: 5px;
+}
+
+
+////////////////////
+// Inputs
+////////////////////
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="datetime-local"],
+input[type="number"],
+input[type="tel"],
+input[type="datetime"],
+input[type="date"],
+input[type="month"],
+input[type="search"],
+input[type="file"],
+input[type="range"],
+input[id="text_inline"],
+textarea, {
+	@include appearance(none);
+	width: 100%;
+	max-width: $input-max-width;
+	height: 40px;
+	font-family: $paragraph-font-family;
+	font-size: $input-font-size;
+	font-weight: 300;
+	background: $input-bg;
+	border: 1px solid $input-placeholder;
+	padding: 0 15px;
+	outline: 0;
+	margin-bottom: 15px;
+
+	&:focus {
+
+	}
+}
+
+
+////////////////////
+// Textarea
+////////////////////
+textarea {
+	min-height: 170px;
+	padding-top: 10px;
+	margin-bottom: 10px;
+}
+
+
+////////////////////
+// Select
+////////////////////
+select {
+
+	optgroup {
+
+	}
+
+	option {
+
+	}
+}
+
+select[multiple] {
+	@include appearance(menulist);
+}
+
+
+/////////////////
+// Checkboxes
+/////////////////
+input[type="checkbox"] {
+   display:none;
+}
+
+input[type="checkbox"] + label {
+	font-size: $input-font-size;
+  font-weight: 300;
+  color: $inline-label-color;
+  margin-bottom: 2px;
+}
+
+input[type="checkbox"] + label:before {
+	// Style the label to be the checkbox
+	content: 'x';
+	display: block;
+	float: left;
+	width: 15px;
+	height: 15px;
+  font-size: 9px;
+  line-height: 2.2;
+  color: transparent;
+  text-align: center;
+	border: $input-border;
+	margin-right: 5px;
+  margin-top: 4px;
+}
+
+input[type="checkbox"]:checked + label:before {
+  content: 'x';
+  color: $radio-check-active;
+}
+
+
+/////////////////
+// Radio Boxes
+/////////////////
+input[type="radio"] {
+   display:none;
+}
+
+input[type="radio"] + label {
+	font-size: $input-font-size;
+  font-weight: 300;
+  color: $inline-label-color;
+}
+
+input[type="radio"] + label:before {
+	// Style the label to be the radio
+	@include border-radius(50%);
+	content: 'x';
+	display: block;
+	float: left;
+	width: 18px;
+	height: 18px;
+	border: $input-border;
+  font-size: 6px;
+  line-height: 20px;
+  text-align: center;
+  color: transparent;
+  margin: 3px 5px 0 0;
+}
+
+input[type="radio"]:checked + label:before {
+  // active radio
+  content: 'x';
+  color: $radio-check-active;
+}
+
+
+////////////////////
+// Button
+////////////////////
+button {
+	@include appearance(none);
+	font-size: $input-font-size;
+	font-weight: 300;
+	background: $input-bg;
+	border: 1px solid $input-placeholder;
+	padding: 10px 20px;
+}
+
+
+////////////////////
+// Validation
+////////////////////
+input:valid, textarea:valid {
+	background-color: transparent;
+}
+
+input:invalid, textarea:invalid {
+
+}
+
+
+////////////////////
+// Placeholders
+////////////////////
+::-webkit-input-placeholder {
+  color: gray;
+}
+
+:-moz-placeholder {
+  color: gray;
+}
+
+::-moz-placeholder {
+  color: gray;
+}
+
+:-ms-input-placeholder {
+  color: gray;
+}

@@ -1,0 +1,48 @@
+$normalized_font_family: 'Open Sans', sans-serif !default;
+$normalize_headings: true !default;
+
+$paragraph-font-family: $normalized_font_family;
+$headline-font-family: $normalized_font_family;
+
+$heading-line-height: 1.2;
+$body-line-height: 1.6;
+
+$h1_font_size: 68px !default;
+$h2_font_size: 42px !default;
+$h3_font_size: 26px !default;
+$h4_font_size: 20px !default;
+$h5_font_size: 16px !default;
+$h6_font_size: 14px !default;
+
+$h1_margin: 0 0 32px 0 !default;
+$h2_margin: 0 0 24px 0 !default;
+$h3_margin: 0 0 18px 0 !default;
+$h4_margin: 0 0 12px 0 !default;
+$h5_margin: 0 0 8px 0 !default;
+$h6_margin: 0 0 8px 0 !default;
+
+$h1-color: #404040;
+$h2-color: #404040;
+$h3-color: #404040;
+$h4-color: #404040;
+
+$h1-link-color: $h1-color;
+$h2-link-color: $h2-color;
+$h3-link-color: $h3-color;
+$h4-link-color: $h4-color;
+
+$h1-link-color-hover: $h1-link-color;
+$h2-link-color-hover: $h2-link-color;
+$h3-link-color-hover: $h3-link-color;
+$h4-link-color-hover: $h4-link-color;
+
+$p-font-size: 16px;
+$p-color: #404040;
+
+$link-color: #3372df;
+$link-color-hover: #3372df;
+
+$rule: #e0e0e0;
+
+$figcaption-size: 13px;
+$figcaption-color: #f0f0f0;

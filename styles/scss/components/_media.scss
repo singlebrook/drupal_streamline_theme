@@ -1,0 +1,51 @@
+// embedded content
+img,
+video,
+object {
+  max-width: 100%;
+}
+
+// figures
+figure, %figure {
+  @include margin-bottom(1);
+  display: table; // In order for caption to = img width
+
+  img {
+    width: 100%;
+  }
+
+  @include gt-small {
+    &.float-right {
+      margin: $image-float-margin 0 $image-float-margin $image-float-margin;
+    }
+
+    &.float-left {
+      margin: $image-float-margin $image-float-margin $image-float-margin 0;
+    }
+  }
+
+  @include lt-small {
+    width: 100% !important;
+
+    &.float-right,
+    &.float-left {
+      display: block;
+      float: none;
+      margin: 0;
+      @include margin-bottom(1);
+    }
+  }
+}
+
+// figure captions
+figcaption, figcaption p,
+%figcaption, %figcaption p {
+  display: block;
+  width: 100%;
+  font-size: $figcaption-size;
+  line-height: 1.2;
+  background: $figcaption-color;
+  padding: 20px;
+  border-top: 0;
+  margin-top: -7px;
+}

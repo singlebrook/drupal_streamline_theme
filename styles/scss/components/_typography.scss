@@ -1,0 +1,178 @@
+// ==================================================
+// headings
+// ==================================================
+h1, h2, h3, h4, h5, h6,
+%h1, %h2, %h3, %h4, %h5, %h6 {
+	font-family: $headline-font-family;
+	font-weight: 300;
+	line-height: $heading-line-height;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+%h1 a, %h2 a, %h3 a, %h4 a, %h5 a, %h6 a {
+	font-weight: inherit;
+}
+
+h1, %h1 {
+	font-size: $h1_font_size;
+	color: $h1-color;
+	margin: $h1_margin;
+
+	a {
+		color: $h1-link-color;
+
+		&:hover {
+			color: $h1-link-color-hover;
+		}
+	}
+}
+
+h2, %h2 {
+	font-size: $h2_font_size;
+	color: $h2-color;
+	margin: $h2_margin;
+
+	a {
+		color: $h2-link-color;
+
+		&:hover {
+			color: $h2-link-color-hover;
+		}
+	}
+
+	& + img.alignright,
+	& + img.alignleft,
+	& + img.alignnone,
+	& + img.aligncenter {
+		margin-top: 0px;
+	}
+
+	& + img + p {
+		margin-top: 0px;
+	}
+}
+
+h3, %h3 {
+	font-size: $h3_font_size;
+	color: $h3-color;
+	margin: $h3_margin;
+
+	a {
+		color: $h3-link-color;
+
+		&:hover {
+			color: $h3-link-color-hover;
+		}
+	}
+
+	& + img.alignright,
+	& + img.alignleft,
+	& + img.alignnone,
+	& + img.aligncenter {
+		margin-top: 10px;
+	}
+}
+
+h4, %h4 {
+	font-size: $h4_font_size;
+	color: $h4-color;
+	margin: $h4_margin;
+
+	a {
+		color: $h4-link-color;
+
+		&:hover {
+			color: $h4-link-color-hover;
+		}
+	}
+}
+
+p, %paragraph {
+	font-size: $p-font-size;
+	font-weight: 400;
+	line-height: 1.6;
+	color: $p-color;
+	margin-bottom: $margin-bottom;
+
+	img {
+		margin: 0;
+	}
+
+	& + img.alignright,
+	& + img.alignleft,
+	& + img.alignnone,
+	& + img.aligncenter {
+		margin-top: 0px;
+	}
+}
+
+hr {
+	clear: both;
+	height: 0;
+	border: 0;
+	border: 1px solid $rule;
+	border-top: 1px solid $rule;
+	margin: 10px 0 10px;
+}
+
+code, pre {
+	font-size: 15px;
+}
+
+blockquote {
+	@include margin-bottom(1);
+  background: lighten($rule, 85%);
+  border-left: 10px solid $rule;
+  padding: 20px 15px;
+
+	p {
+  display: inline;
+
+  	&:last-child {
+  		margin-bottom: 0;
+  	}
+  }
+
+  cite {
+  	display: block;
+  	text-align: right;
+  }
+}
+
+address, %address {
+	font-size: $p-font-size;
+	line-height: 1.6;
+	color: $p-color;
+	margin-bottom: 20px;
+}
+
+em, i {
+	font-style: italic;
+}
+
+b, strong {
+	font-weight: bold;
+}
+
+small {
+	font-size: 1.1em;
+}
+
+cite {
+	font-size: $p-font-size - 2px;
+}
+
+sub, sup {
+	font-size: .7em;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+sup {
+	top: -0.5em;
+}
+
+sub {
+	bottom: -0.25em;
+}

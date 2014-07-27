@@ -1,0 +1,30 @@
+@mixin margin-bottom($multiplier) {
+  margin-bottom: $margin-bottom * $multiplier;
+}
+
+@mixin container {
+  position: relative;
+  width: 100%;
+  max-width: $container-max-width;
+  padding: 0 $container-gutter;
+  margin: 0 auto;
+}
+
+@mixin clearfix {
+  overflow: hidden;
+  *zoom: 1;
+}
+
+@mixin legacy-clearfix {
+  *zoom: 1;
+
+  &:after,
+  &:before {
+    content: "\0020";
+    display: block;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}

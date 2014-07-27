@@ -1,0 +1,161 @@
+table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  font-size: $p-font-size;
+  border: 8px solid $background-body; // Faux padding
+  margin-bottom: 30px;
+  clear: both;
+
+  section.row & {
+    margin-bottom: 0;
+  }
+
+  p {
+    font-size: $p-font-size;
+  }
+
+  th {
+      color: $p-color;
+      font-weight: bold;
+      padding: 6px 8px;
+      text-transform: uppercase;
+  }
+
+  td {
+      border-top: 1px dotted $rule;
+      color: $p-color;
+      padding: 6px 8px;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+
+/////////////////////
+// Special Classes
+/////////////////////
+// Zebra stripping
+table.zebra {
+  td {
+    border: 0;
+  }
+
+  tbody tr:nth-child(odd) {
+   background-color: #ccc;
+  }
+}
+
+table.dark.zebra {
+  td {
+    border: 0;
+  }
+
+  tbody tr:nth-child(odd) {
+   background-color: $background-body;
+  }
+}
+
+// Dark table
+table.dark {
+  border: 8px solid #ccc;
+  background: #ccc;
+}
+
+// Alignment of values
+table.center-first {
+  td:first-child, th:first-child {
+    text-align: center;
+  }
+}
+
+table.center-2nd {
+  td:nth-child(2n), th:nth-child(2n) {
+    text-align: center;
+  }
+}
+
+table.center-3rd {
+  td:nth-child(3n), th:nth-child(3n) {
+    text-align: center;
+  }
+}
+
+table.center-4th {
+  td:nth-child(4n), th:nth-child(4n) {
+    text-align: center;
+  }
+}
+
+table.center-last {
+  td:last-child, th:last-child {
+    text-align: center;
+  }
+}
+
+
+/////////////////////
+// Responsive Tables
+// make sure the table has .responsive
+/////////////////////
+@include lt-med {
+  table.responsive {
+    margin-bottom: 0;
+
+    td, th {
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+
+      th:first-child,
+      td:first-child {
+        display: none;
+      }
+    }
+  }
+
+  .pinned {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #fff;
+    width: 35%;
+    overflow: hidden;
+    overflow-x: scroll;
+    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+
+    table {
+      border-right: none;
+      border-left: none;
+      width: 100%;
+
+      th, td {
+        white-space: nowrap;
+      }
+
+      td {
+        display: none;
+
+        &:last-child {
+          border-bottom: 0;
+        }
+      }
+    }
+  }
+
+  div.table-wrapper {
+    position: relative;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-right: 1px solid #ccc;
+
+      div.scrollable {
+      margin-left: 35%;
+      overflow: scroll;
+      overflow-y: hidden;
+    }
+  }
+}

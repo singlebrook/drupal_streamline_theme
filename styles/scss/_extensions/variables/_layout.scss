@@ -1,0 +1,14 @@
+// normalize
+$legacy_support_for_ie: false !default;
+
+// @mixin container
+$container-max-width: 1140px;
+$container-gutter: 20px;
+
+// media queries
+$mq-small : 500px !default;
+$mq-med : 800px !default;
+
+// spacing
+$margin-bottom: 24px;
+$image-float-margin: 24px;
