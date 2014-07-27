@@ -1,0 +1,21 @@
+.button,
+input[type="submit"] {
+  @include appearance(none);
+  display: inline-block;
+  background: $brand;
+  color: white;
+  min-width: 125px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  text-align: center;
+  text-decoration: none;
+  outline: 0;
+  border: 0;
+  margin: 10px 15px 10px 0;
+
+  &:hover {
+    background: #444;
+    color: #ffffff;
+    text-decoration: none;
+  }
+}

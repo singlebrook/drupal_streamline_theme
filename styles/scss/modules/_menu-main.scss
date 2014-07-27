@@ -1,0 +1,16 @@
+.menu-main {
+  margin-bottom: 40px;
+
+  h2 {
+    display: none;
+  }
+
+  ul {
+    @extend %not-list;
+
+    li {
+      display: inline;
+      padding-right: 15px;
+    }
+  }
+}

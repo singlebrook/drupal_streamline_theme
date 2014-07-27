@@ -14,6 +14,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
+
+  li {
+    padding: 0;
+
+    &:before {
+      content: none;
+    }
+  }
 }
 
 // When you dont want links clickable
@@ -50,3 +58,8 @@
 
 // Hide visually and from screenreaders, but maintain layout
 %invisible { visibility: hidden; }
+
+// drupal default hide element
+.element-invisible {
+  display: none;
+}

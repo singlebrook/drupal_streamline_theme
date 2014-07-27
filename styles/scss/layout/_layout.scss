@@ -1,3 +1,52 @@
-section {
+.wrapper {
  @include container;
+}
+
+header {
+  margin-bottom: 40px;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+  clear: both;
+
+  > article {
+    width: 100%;
+
+    @include gt-med {
+      .one-sidebar & {
+        float: left;
+        width: calc(100% - 25%);
+        padding-left: 40px;
+      }
+
+      .two-sidebars & {
+        float: left;
+        width: calc(100% - 25% - 25%);
+        padding: 0 40px;
+      }
+    }
+  }
+
+  > aside.sidebar {
+    width: 100%;
+
+    @include gt-med {
+      &.sidebar-first {
+        width: 25%;
+        float: left;
+      }
+
+      &.sidebar-second {
+        width: 25%;
+        float: left;
+      }
+    }
+  }
+}
+
+footer {
+  background: #e0e0e0;
+  padding: 10px 20px;
 }
