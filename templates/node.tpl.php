@@ -1,10 +1,9 @@
-<article role="article" id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
-
+<div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php print $user_picture; ?>
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+    <h3<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h3>
   <?php endif; ?>
   <?php print render($title_suffix); ?>
 
@@ -25,5 +24,4 @@
 
   <?php print render($content['links']); ?>
   <?php print render($content['comments']); ?>
-
-</article>
+</div>
