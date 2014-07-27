@@ -1,11 +1,5 @@
 <div class="wrapper">
   <header role="banner">
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    <?php endif; ?>
-
     <?php if ($site_name || $site_slogan): ?>
       <div class="name-and-slogan">
         <?php if ($site_name): ?>
@@ -26,7 +20,7 @@
   </header>
 
   <?php if ($main_menu): ?>
-    <nav role="navigation" class="main-menu">
+    <nav role="navigation" class="menu-main">
       <?php print theme('links__system_main_menu', array('links' => $main_menu, 'attributes' => array('id' => 'main-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Main menu'))); ?>
     </nav>
   <?php endif; ?>
@@ -34,11 +28,17 @@
   <?php print $messages; ?>
 
   <section role="main">
-    <?php if ($breadcrumb): ?>
-      <div class="breadcrumb"><?php print $breadcrumb; ?></div>
+    <?php if ($page['sidebar_first']): ?>
+      <aside id="" class="sidebar sidebar-first">
+        <?php print render($page['sidebar_first']); ?>
+      </aside>
     <?php endif; ?>
 
     <article role="article">
+      <?php if ($breadcrumb): ?>
+        <div class="breadcrumb"><?php print $breadcrumb; ?></div>
+      <?php endif; ?>
+
       <?php if ($page['highlighted']): ?>
         <div class="highlighted"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -55,12 +55,6 @@
       <?php print $feed_icons; ?>
     </article>
 
-    <?php if ($page['sidebar_first']): ?>
-      <aside id="" class="sidebar sidebar-first">
-        <?php print render($page['sidebar_first']); ?>
-      </aside>
-    <?php endif; ?>
-
     <?php if ($page['sidebar_second']): ?>
       <aside class="sidebar sidebar-second">
         <?php print render($page['sidebar_second']); ?>
@@ -70,7 +64,7 @@
 
   <footer role="contentinfo">
     <?php if ($secondary_menu): ?>
-      <nav role="navigation">
+      <nav role="navigation" class="menu-footer">
         <?php print theme('links__system_secondary_menu', array('links' => $secondary_menu, 'attributes' => array('id' => 'secondary-menu', 'class' => array('links', 'inline', 'clearfix')), 'heading' => t('Secondary menu'))); ?>
       </nav>
     <?php endif; ?>
