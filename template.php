@@ -18,3 +18,8 @@ function drupal_streamline_theme_preprocess_page(&$variables) {
 function drupal_streamline_theme_js_alter(&$js) {
   unset($js['misc/tableheader.js']);
 }
+
+// Unset some system css
+function drupal_streamline_theme_css_alter(&$css) {
+  unset($css[drupal_get_path('module','system').'/system.menus.css']);
+}
