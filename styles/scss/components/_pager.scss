@@ -1,0 +1,24 @@
+.pager {
+  text-align: center;
+
+  // hide
+  .pager-top,
+  .pager-middle,
+  .pager-ellipsis,
+  .ajax-progress .throbber {
+    display: none;
+  }
+
+  > * {
+    display: inline-block;
+    padding: 0 4px;
+  }
+
+  .pager-next {
+    padding-left: 10px;
+  }
+
+  .pager-prev {
+    padding-right: 10px;
+  }
+}
